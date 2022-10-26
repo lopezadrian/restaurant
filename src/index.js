@@ -14,8 +14,6 @@ generateMainPageContent();
 
 function chooseNewPage(e) {
     const clickedElement = e.target;
-    console.log(clickedElement);
-
     
     if (clickedElement.matches('#main-page-button')) generateMainPageContent();
     if (clickedElement.matches('#menu-page-button')) generateMenuPageContent();
