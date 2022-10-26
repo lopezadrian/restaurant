@@ -126,7 +126,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _makeHtml__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./makeHtml */ \"./src/makeHtml.js\");\n\n\n\n(0,_makeHtml__WEBPACK_IMPORTED_MODULE_1__.generatePageButton)('main');\n(0,_makeHtml__WEBPACK_IMPORTED_MODULE_1__.generatePageButton)('menu');\n(0,_makeHtml__WEBPACK_IMPORTED_MODULE_1__.generatePageButton)('contact');\n\ndocument.addEventListener('click', chooseNewPage);\n\n(0,_makeHtml__WEBPACK_IMPORTED_MODULE_1__.generateNewPage)('main');\n\nfunction chooseNewPage(e) {\n    const clickedElement = e.target;\n    console.log(clickedElement);\n\n    \n    if (clickedElement.matches('#main-page-button')) (0,_makeHtml__WEBPACK_IMPORTED_MODULE_1__.generateNewPage)('main');\n    if (clickedElement.matches('#menu-page-button')) (0,_makeHtml__WEBPACK_IMPORTED_MODULE_1__.generateNewPage)('menu');\n    if (clickedElement.matches('#contact-page-button')) (0,_makeHtml__WEBPACK_IMPORTED_MODULE_1__.generateNewPage)('contact');\n}\n\n//# sourceURL=webpack://restaurant/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _pageButtons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pageButtons */ \"./src/pageButtons.js\");\n/* harmony import */ var _mainPage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./mainPage */ \"./src/mainPage.js\");\n/* harmony import */ var _menuPage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./menuPage */ \"./src/menuPage.js\");\n/* harmony import */ var _contactPage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./contactPage */ \"./src/contactPage.js\");\n\n\n\n\n\n\n(0,_pageButtons__WEBPACK_IMPORTED_MODULE_1__[\"default\"])('main');\n(0,_pageButtons__WEBPACK_IMPORTED_MODULE_1__[\"default\"])('menu');\n(0,_pageButtons__WEBPACK_IMPORTED_MODULE_1__[\"default\"])('contact');\n\ndocument.addEventListener('click', chooseNewPage);\n\n(0,_mainPage__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\n\nfunction chooseNewPage(e) {\n    const clickedElement = e.target;\n    console.log(clickedElement);\n\n    \n    if (clickedElement.matches('#main-page-button')) (0,_mainPage__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\n    if (clickedElement.matches('#menu-page-button')) (0,_menuPage__WEBPACK_IMPORTED_MODULE_3__[\"default\"])();\n    if (clickedElement.matches('#contact-page-button')) (0,_contactPage__WEBPACK_IMPORTED_MODULE_4__[\"default\"])();\n}\n\n//# sourceURL=webpack://restaurant/./src/index.js?");
 
 /***/ }),
 
@@ -140,16 +140,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
-/***/ "./src/makeHtml.js":
-/*!*************************!*\
-  !*** ./src/makeHtml.js ***!
-  \*************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"generateNewPage\": () => (/* binding */ generateNewPage),\n/* harmony export */   \"generatePageButton\": () => (/* binding */ generatePageButton)\n/* harmony export */ });\n/* harmony import */ var _mainPage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./mainPage */ \"./src/mainPage.js\");\n/* harmony import */ var _menuPage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./menuPage */ \"./src/menuPage.js\");\n/* harmony import */ var _contactPage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./contactPage */ \"./src/contactPage.js\");\n\n\n\n\nfunction capitalizeString (string) {\n    const capitalizedString = string.charAt(0).toUpperCase() + string.slice(1);\n    return capitalizedString;\n}\n\nfunction generatePageButton (pageName) {\n    const capitalizedPageName = capitalizeString(pageName);\n    const button = document.createElement('button');\n    button.id = `${pageName}-page-button`;\n    const buttonText = document.createTextNode(`${capitalizedPageName} Page`);\n    button.appendChild(buttonText);\n    content.appendChild(button);\n    return button;\n}\n\nfunction generateNewPage(pageName) {\n/*     const pageToRemove = document.querySelector('.current-page');\n    if (pageToRemove) content.removeChild(pageToRemove);\n\n    const capitalizedPageName = capitalizeString(pageName);\n    const newPage = document.createElement('div');\n    newPage.id = `${pageName}-page`;\n    newPage.className = 'current-page';\n    content.appendChild(newPage);\n        \n    const newPageHeader = document.createElement('h1');\n    const newPageHeaderText = document.createTextNode(`${capitalizedPageName} Page`);\n    newPageHeader.appendChild(newPageHeaderText);\n    newPage.appendChild(newPageHeader); */\n\n    switch (pageName) {\n        case 'main':\n            (0,_mainPage__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n            break;\n        case 'menu':\n            (0,_menuPage__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n            break;\n        case 'contact':\n            (0,_contactPage__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\n            break;\n    }\n}\n\n\n\n//# sourceURL=webpack://restaurant/./src/makeHtml.js?");
-
-/***/ }),
-
 /***/ "./src/menuPage.js":
 /*!*************************!*\
   !*** ./src/menuPage.js ***!
@@ -157,6 +147,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nfunction generateMenuPageContent() {\n    const pageToRemove = document.querySelector('.current-page');\n    if (pageToRemove) content.removeChild(pageToRemove);\n\n    const menuPage = document.createElement('div');\n    menuPage.id = 'menu-page';\n    menuPage.className = 'current-page';\n    content.appendChild(menuPage);\n        \n    const menuPageHeader = document.createElement('h1');\n    const menuPageHeaderText = document.createTextNode('Menu');\n    menuPageHeader.appendChild(menuPageHeaderText);\n    menuPage.appendChild(menuPageHeader);\n\n    const description = document.createElement('div');\n    description.className = 'description';\n    description.textContent = 'Take a look at our Menu, with various Food Items!';\n    menuPage.appendChild(description);\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (generateMenuPageContent);\n\n//# sourceURL=webpack://restaurant/./src/menuPage.js?");
+
+/***/ }),
+
+/***/ "./src/pageButtons.js":
+/*!****************************!*\
+  !*** ./src/pageButtons.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nfunction capitalizeString (string) {\n    const capitalizedString = string.charAt(0).toUpperCase() + string.slice(1);\n    return capitalizedString;\n}\n\nfunction generatePageButton (pageName) {\n    const capitalizedPageName = capitalizeString(pageName);\n    const button = document.createElement('button');\n    button.id = `${pageName}-page-button`;\n    const buttonText = document.createTextNode(`${capitalizedPageName} Page`);\n    button.appendChild(buttonText);\n    content.appendChild(button);\n    return button;\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (generatePageButton);\n\n//# sourceURL=webpack://restaurant/./src/pageButtons.js?");
 
 /***/ })
 

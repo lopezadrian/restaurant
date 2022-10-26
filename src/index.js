@@ -1,5 +1,8 @@
 import './style.css';
-import { generatePageButton, generateNewPage } from './makeHtml';
+import generatePageButton from './pageButtons';
+import generateMainPageContent from "./mainPage";
+import generateMenuPageContent from "./menuPage";
+import generateContactPageContent from "./contactPage";
 
 generatePageButton('main');
 generatePageButton('menu');
@@ -7,14 +10,14 @@ generatePageButton('contact');
 
 document.addEventListener('click', chooseNewPage);
 
-generateNewPage('main');
+generateMainPageContent();
 
 function chooseNewPage(e) {
     const clickedElement = e.target;
     console.log(clickedElement);
 
     
-    if (clickedElement.matches('#main-page-button')) generateNewPage('main');
-    if (clickedElement.matches('#menu-page-button')) generateNewPage('menu');
-    if (clickedElement.matches('#contact-page-button')) generateNewPage('contact');
+    if (clickedElement.matches('#main-page-button')) generateMainPageContent();
+    if (clickedElement.matches('#menu-page-button')) generateMenuPageContent();
+    if (clickedElement.matches('#contact-page-button')) generateContactPageContent();
 }
